@@ -6,5 +6,9 @@ local pluginData = {
 }
 
 RegisterClientPlugin(pluginData, function(print)
-    print("Hello from client plugin!")
+    print("test_plugin_client.lua loaded")
+
+    HookEventHandler(ENUM_HOOKABLE_EVENTS.UNCONSCIOUS_STATE_CHANGED, function(state)
+        print("Character unconscious state updated:", state)
+    end)
 end)
